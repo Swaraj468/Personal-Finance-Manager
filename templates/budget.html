@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Budget
+{% endblock %}
+
+{% block main %}
+
+<form id="budgetForm" action="/budget" method="post">
+<div class="container">
+    <label for="category">Category:
+    <input type="text" name="category" id="category" autocomplete="off">
+</div>
+<div class="container">
+    <label for="budget_amount">Budget Amount:</label> 
+    <input type="number" step="0.01" id="budget_amount" name="budget_amount">
+</div>
+<div class="container">
+    <label for="start_date">Start Date:</label> 
+    <input type="date" id="start_date" name="start_date" placeholder="dd-mm-yyyy"> 
+</div>
+<div class="container">
+    <label for="end_date">End Date:</label> 
+    <input type="date" id="end_date" name="end_date" placeholder="dd-mm-yyyy">
+</div>
+    <button type="submit" class="btn btn-primary bt">Add Budget</button>
+</form>
+<div class="container mt-5">
+    <h2>Budgeting Overview</h2>
+    <table class="table table-bordered mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Budget Amount</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for budget in budgets %}
+            <tr>
+                <td>{{ budget.category }}</td>
+                <td>{{ budget.budget_amount }}</td>
+                <td>{{ budget.start_date }}</td>
+                <td>{{ budget.end_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<form action="/budget" method="post">
+    <button type="submit" name="reset" value="reset" class="btn btn-danger">Reset Budgeting</button>
+</form>
+{% endblock %}

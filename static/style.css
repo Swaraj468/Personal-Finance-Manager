@@ -1,0 +1,66 @@
+.dropdown-center {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .more-button {
+    background-color: white;
+    color: blue;
+    border-color: blue;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .btn-large {
+    font-size: 1.25rem; /* Adjust as needed */
+    padding: 10px 20px;
+  }
+
+  #choose {
+    font-size: 18px;
+}
+
+.su {
+  margin-top: 20px; /* Adjust the value as needed */
+}
+
+.container{ 
+  margin-bottom: 15px; 
+  align-items: center;
+ }
+
+ .fea_para{
+  font-size: 19px;
+   line-height: 1.6;
+   color: #555;
+}
+
+.fea{
+  background-color : #D9DFC6;
+}
+.heading{
+  color : #2A3663;
+  text-align : center;
+  font-size: 2.5rem;
+  font-family: 'Arial', sans-serif;
+}
+#faqbody{
+  background-color : #9AA6B2;
+  text-align : center;
+}
+.pfaq{
+  font-size: 20px;
+   line-height: 1.6;
+   color: #444;
+
+}
+.h2faq{
+  font-size: 3rem;
+  color : #2A3663;
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+}

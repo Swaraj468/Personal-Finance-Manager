@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+
+<form id="homepageForm" action="/" method="post">
+  <div class="mb-3">
+    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="description" placeholder="Add Description" type="text">
+</div>
+<div class="mb-3">
+    <input class="form-control mx-auto w-auto" name="amount" placeholder="Amount" type="number">
+</div>
+<div class="mb-3">
+  <select name="transaction_type" id="choose">
+    <option value="" disabled selected>Transaction Type</option>
+    <option value="income">Income</option>
+    <option value="expense">Expenses</option>
+  </select>
+</div>
+
+<button class="btn btn-primary" type="submit">Add</button>
+</form>
+
+     
+      
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Date & Time</th>
+        <th scope="col">Description</th>
+       
+        <th scope="col">Amount</th>
+        <th scope="col">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for transaction in transactions %}
+      <tr>
+        <td>{{ transaction.date }}</td>
+        <td>{{ transaction.description }}</td>
+        <td class="{% if transaction.type == 'income' %}text-success{% else %}text-danger{% endif %}">
+          {{ transaction.amount }}</td>
+        <td>{{ transaction.type }}</td>
+    </tr>
+    {% endfor %}
+  
+    </tbody>
+   
+  </table>
+  <form action="/transaction" method="post">
+    <button type="submit" name="reset" value="reset" class="btn btn-danger">Reset Transactions</button>
+</form>
+      
+{% endblock %}
